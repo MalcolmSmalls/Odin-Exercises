@@ -19,3 +19,26 @@ let user = {
 user.name = "Pete"
 
 delete user.name
+
+
+// Check for emptiness
+// importance: 5
+// Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+
+// Should work like that:
+
+// let schedule = {};
+
+// alert( isEmpty(schedule) ); // true
+
+// schedule["8:30"] = "get up";
+
+// alert( isEmpty(schedule) ); // false
+
+let isEmpty = (obj) => Object.keys(obj).length === 0
+
+
+let something = {}
+
+something.color = 'black'
+
