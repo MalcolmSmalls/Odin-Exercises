@@ -68,10 +68,21 @@
 
     // 5. Sort the inventors by years lived
 
-    const numOfYearsWithName = inventors.map(inventor => inventor.passed - inventor.year)
+    const sortedByYearsLived = inventors.sort((a,b) => {
+        if((a.passed - a.year < b.passed - b.year)){
+            return -1
+        }else{
+            return 1
+        }
+        return 1
+    })
 
+    console.log(sortedByYearsLived)
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+    const parisBoulevards = ["Boulevard de l'Amiral-Bruix",]
+
 
 
     // 7. sort Exercise
