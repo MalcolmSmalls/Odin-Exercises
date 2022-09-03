@@ -95,6 +95,38 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const addedUpData = data.reduce((obj, item) => {
+        // obj = {
+        //     car: 0,
+        //     truck: 0,
+        //     bike: 0,
+        //     walk: 0,
+        //     van: 0,
+        // }
+        if(item === 'car'){
+            obj.car++
+        }else if(item === 'truck'){
+            obj.truck++
+        }else if(item === 'bike'){
+            obj.bike++
+        }else if(item === "walk"){
+            obj.walk++
+        }else{
+            obj.van++
+        }
+        return obj
+    },
+    obj = {
+            car: 0,
+            truck: 0,
+            bike: 0,
+            walk: 0,
+            van: 0,
+        })
+
+    console.log(addedUpData)
+
+
   </script>
 </body>
 </html>
