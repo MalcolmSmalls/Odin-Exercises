@@ -139,14 +139,54 @@
 
 
 // 09 Palindromes.js
-const palindromes = function (str) {
-    let backwards = str.toLowerCase().replace(/[.!,]/g, "").split("").reverse().join("").split(" ").join("")
-    let forwards = str.toLowerCase().replace(/[.!,]/g, "").split(" ").join("")
-    if(backwards === forwards){
-        return true
+
+// const palindromes = function (str) {
+//     let backwards = str.toLowerCase().replace(/[.!,]/g, "").split("").reverse().join("").split(" ").join("")
+//     let forwards = str.toLowerCase().replace(/[.!,]/g, "").split(" ").join("")
+//     if(backwards === forwards){
+//         return true
+//     }else{
+//         return false
+//     }
+// };
+
+// console.log(palindromes('A car, a man, a maraca.'))
+
+
+
+// 10 Fibonacci 
+
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+let num = 0
+let num2 = 1
+let holderNum = num + num2 // this is 1 rn
+// num = num2 + holderNum // this is 2
+// num2 = holderNum + num
+
+let results = ""
+
+
+const fibonacci = function(number) {
+    number = Number(number)
+    if(number < 0){
+        return 'OOPS'
     }else{
-        return false
+    for(i=1; i <= number;i++){
+        holderNum = num + num2 // this is 1 rn
+        results = `${num} ${num2} ${holderNum} ` + results
+        num = num2 + holderNum // this is 2
+        num2 = holderNum + num
+    }
+    let finishedResults = results.split(" ").sort((a,b) => a-b).filter(number => number.length > 0)
+    return Number(finishedResults[number])
     }
 };
 
-console.log(palindromes('A car, a man, a maraca.'))
+// so i need to get 0 and 1
+// then i need to plus the two to get the third number
+// which would be 1 0,1,1,2,3
+// then i need to grab the previous number and plus it to the current number
+// now the new number im on is 2
+// then i need to reach back and grab the 1 to plus it to the 2
+// then the new number is 3
+// then i need to go back
