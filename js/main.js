@@ -194,22 +194,57 @@
 
 // 11 Get The Titles
 
-const books = [
+// const books = [
+//     {
+//       title: 'Book',
+//       author: 'Name'
+//     },
+//     {
+//       title: 'Book2',
+//       author: 'Name2'
+//     }
+//   ]
+
+
+//   const getTheTitles = function() {
+//     let newArr = []
+//     books.forEach(x => newArr.push(x.title))
+//     return newArr
+// };
+
+// console.log(getTheTitles())
+
+
+// 12. Find the Oldest
+
+const people = [
     {
-      title: 'Book',
-      author: 'Name'
+      name: "Carly",
+      yearOfBirth: 1942,
+      yearOfDeath: 1970,
     },
     {
-      title: 'Book2',
-      author: 'Name2'
-    }
+      name: "Ray",
+      yearOfBirth: 1962,
+      yearOfDeath: 2011,
+    },
+    {
+      name: "Jane",
+      yearOfBirth: 1912,
+      yearOfDeath: 2022,
+    },
   ]
 
-
-  const getTheTitles = function() {
-    let newArr = []
-    books.forEach(x => newArr.push(x.title))
-    return newArr
+  const findTheOldest = function() {
+    people.forEach(x => {
+        if(x.yearOfDeath === undefined){
+            x['yearOfDeath'] = 2022
+        }
+        x['age'] = x.yearOfDeath - x.yearOfBirth
+    })
+    people.sort((a,b) => b.age - a.age)
+    return people[0]
 };
 
-console.log(getTheTitles())
+console.log(findTheOldest())
+
