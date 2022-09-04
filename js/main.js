@@ -106,32 +106,47 @@
 
 
 
-// 08 Calculator.js
+// // 08 Calculator.js
 
-const add = function(n1,n2) {
-	return n1 + n2
+// const add = function(n1,n2) {
+// 	return n1 + n2
+// };
+
+// const subtract = function(n1, n2) {
+// 	return n1 - n2
+// };
+
+// const sum = function(arr) {
+// 	return arr.reduce((total, curr) => total + curr, 0)
+// };
+
+// const multiply = function(arr) {
+//   return arr.reduce((total,curr) => total*curr,1)
+// };
+
+// const power = function(num, exp) {
+//     return num**exp
+// };
+
+// const factorial = function(number) {
+//   let total = 1
+// 	for(i=1; i<=number; i++){
+//     total *= i
+//   }
+//   return total
+// };
+
+
+
+// 09 Palindromes.js
+const palindromes = function (str) {
+    let backwards = str.toLowerCase().replace(/[.!,]/g, "").split("").reverse().join("").split(" ").join("")
+    let forwards = str.toLowerCase().replace(/[.!,]/g, "").split(" ").join("")
+    if(backwards === forwards){
+        return true
+    }else{
+        return false
+    }
 };
 
-const subtract = function(n1, n2) {
-	return n1 - n2
-};
-
-const sum = function(arr) {
-	return arr.reduce((total, curr) => total + curr, 0)
-};
-
-const multiply = function(arr) {
-  return arr.reduce((total,curr) => total*curr,1)
-};
-
-const power = function(num, exp) {
-    return num**exp
-};
-
-const factorial = function(number) {
-  let total = 1
-	for(i=1; i<=number; i++){
-    total *= i
-  }
-  return total
-};
+console.log(palindromes('A car, a man, a maraca.'))
