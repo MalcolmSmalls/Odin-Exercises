@@ -157,30 +157,30 @@
 // 10 Fibonacci 
 
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-let num = 0
-let num2 = 1
-let holderNum = num + num2 // this is 1 rn
+// let num = 0
+// let num2 = 1
+// let holderNum = num + num2 
 // num = num2 + holderNum // this is 2
 // num2 = holderNum + num
 
-let results = ""
+// let results = ""
 
 
-const fibonacci = function(number) {
-    number = Number(number)
-    if(number < 0){
-        return 'OOPS'
-    }else{
-    for(i=1; i <= number;i++){
-        holderNum = num + num2 // this is 1 rn
-        results = `${num} ${num2} ${holderNum} ` + results
-        num = num2 + holderNum // this is 2
-        num2 = holderNum + num
-    }
-    let finishedResults = results.split(" ").sort((a,b) => a-b).filter(number => number.length > 0)
-    return Number(finishedResults[number])
-    }
-};
+// const fibonacci = function(number) {
+//     number = Number(number)
+//     if(number < 0){
+//         return 'OOPS'
+//     }else{
+//     for(i=1; i <= number;i++){
+//         holderNum = num + num2 // this is 1 rn
+//         results = `${num} ${num2} ${holderNum} ` + results
+//         num = num2 + holderNum // this is 2
+//         num2 = holderNum + num
+//     }
+//     let finishedResults = results.split(" ").sort((a,b) => a-b).filter(number => number.length > 0)
+//     return Number(finishedResults[number])
+//     }
+// };
 
 // so i need to get 0 and 1
 // then i need to plus the two to get the third number
@@ -190,3 +190,26 @@ const fibonacci = function(number) {
 // then i need to reach back and grab the 1 to plus it to the 2
 // then the new number is 3
 // then i need to go back
+
+
+// 11 Get The Titles
+
+const books = [
+    {
+      title: 'Book',
+      author: 'Name'
+    },
+    {
+      title: 'Book2',
+      author: 'Name2'
+    }
+  ]
+
+
+  const getTheTitles = function() {
+    let newArr = []
+    books.forEach(x => newArr.push(x.title))
+    return newArr
+};
+
+console.log(getTheTitles())
